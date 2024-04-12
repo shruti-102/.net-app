@@ -12,11 +12,7 @@ pipeline {
  
         stage('Build docker image') {
             steps {  
-                script {
-                    dir('.net-app') {
-                        sh 'docker build -t shrutishukla102/devops:$BUILD_NUMBER .'
-                    }
-                } 
+                sh 'docker build -t shrutishukla102/devops:$BUILD_NUMBER .' 
             }
         }
         stage('login to dockerHub') {
